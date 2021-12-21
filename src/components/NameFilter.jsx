@@ -6,12 +6,16 @@ const NameFilter = () => {
   const { changeNameFilter } = useContext(planetsContext);
 
   return (
-    <input
-      data-testid="name-filter"
-      type="text"
-      placeholder="Filtrar por nome"
-      onChange={ ({ target }) => changeNameFilter(target.value) }
-    />
+    <div className="mb-3">
+      <input
+        className="form-control"
+        data-testid="name-filter"
+        type="text"
+        placeholder="Filtrar por nome"
+        onChange={ ({ target }) => changeNameFilter(target.value) }
+      />
+      <div className="form-text">Digite o nome para filtrar</div>
+    </div>
   );
 };
 
