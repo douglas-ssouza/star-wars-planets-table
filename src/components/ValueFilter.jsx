@@ -48,6 +48,7 @@ const ValueFilter = () => {
         onChange={ ({ target }) => setValue(target.value) }
       />
       <Button
+        variant="dark"
         type="button"
         data-testid="button-filter"
         onClick={ () => addNumericFilter({ column, comparison, value }) }

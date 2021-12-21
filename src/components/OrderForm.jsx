@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 
+import Button from 'react-bootstrap/Button';
+
 import planetsContext from '../context/planetsContext';
 
 const OrderForm = () => {
@@ -49,13 +51,14 @@ const OrderForm = () => {
           />
           Descendente
         </label>
-        <button
+        <Button
+          variant="dark"
           type="button"
           data-testid="column-sort-button"
           onClick={ () => changeOrder({ column, sort }) }
         >
           Ordenar
-        </button>
+        </Button>
       </form>
     </section>
   );
