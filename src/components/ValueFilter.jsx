@@ -26,7 +26,7 @@ const ValueFilter = () => {
 
   return (
     <form>
-      <div className="row g-3">
+      <div className="row g-3 m-3">
         <div className="col-auto">
           <select
             className="form-select"
