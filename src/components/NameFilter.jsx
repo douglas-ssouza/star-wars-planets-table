@@ -6,7 +6,7 @@ const NameFilter = () => {
   const { changeNameFilter } = useContext(planetsContext);
 
   return (
-    <div className="m-4">
+    <div className="mb-1 ms-4">
       <input
         className="form-control"
         data-testid="name-filter"
