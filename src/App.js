@@ -11,7 +11,7 @@ import Filters from './components/Filters';
 function App() {
   return (
     <Provider>
-      <h1>Projeto Star Wars - Trybe</h1>
+      <h1>Star Wars Planets Search</h1>
       <NameFilter />
       <ValueFilter />
       <OrderForm />
