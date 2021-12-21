@@ -13,14 +13,23 @@ const Table = () => {
   keys.splice(keys.indexOf('residents'), 1);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          { keys.map((header) => <th key={ header }>{header}</th>) }
-        </tr>
-      </thead>
-      <TableBody />
-    </table>
+    <div className="table-responsive-sm">
+      <table
+        className="table table-dark table-striped table-hover
+        table-bordered align-middle m-3 text-center"
+      >
+        <thead>
+          <tr>
+            { keys.map((header) => (
+              <th key={ header }>
+                {header}
+              </th>
+            )) }
+          </tr>
+        </thead>
+        <TableBody />
+      </table>
+    </div>
   );
 };
 
