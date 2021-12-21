@@ -13,7 +13,7 @@ const OrderForm = () => {
   return (
     <form>
       <div className="row g-3 m-3">
-        <div className="col-auto">
+        <div className="col-sm-3">
           <select
             className="form-select"
             data-testid="column-sort"
@@ -29,7 +29,7 @@ const OrderForm = () => {
             }
           </select>
         </div>
-        <div className="col-auto form-check">
+        <div className="col-sm-3 form-check text-center">
           <label htmlFor="ASC" className="form-check-label">
             <input
               className="form-check-input"
@@ -44,7 +44,7 @@ const OrderForm = () => {
             Ascendente
           </label>
         </div>
-        <div className="col-auto form-check">
+        <div className="col-sm-3 form-check text-center">
           <label htmlFor="DESC" className="form-check-label">
             <input
               className="form-check-input"
@@ -58,9 +58,9 @@ const OrderForm = () => {
             Descendente
           </label>
         </div>
-        <div className="col-auto">
+        <div className="col-sm-3">
           <button
-            className="btn btn-dark"
+            className="btn btn-dark col-sm-12 ms-2"
             type="button"
             data-testid="column-sort-button"
             onClick={ () => changeOrder({ column, sort }) }
