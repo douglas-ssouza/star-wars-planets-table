@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 
-import Button from 'react-bootstrap/Button';
-
 import planetsContext from '../context/planetsContext';
 
 const ValueFilter = () => {
@@ -57,14 +55,14 @@ const ValueFilter = () => {
           />
         </div>
         <div className="col-auto">
-          <Button
-            variant="dark"
+          <button
+            className="btn btn-dark"
             type="button"
             data-testid="button-filter"
             onClick={ () => addNumericFilter({ column, comparison, value }) }
           >
             Filtrar
-          </Button>
+          </button>
         </div>
       </div>
     </form>
