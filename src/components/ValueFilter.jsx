@@ -27,7 +27,7 @@ const ValueFilter = () => {
   return (
     <form>
       <div className="row g-3 m-1 ms-3">
-        <div className="col-auto">
+        <div className="col-sm-3">
           <select
             className="form-select"
             data-testid="column-filter"
@@ -36,7 +36,7 @@ const ValueFilter = () => {
             { renderOptions() }
           </select>
         </div>
-        <div className="col-auto">
+        <div className="col-sm-3">
           <select
             className="form-select col-auto"
             data-testid="comparison-filter"
@@ -47,16 +47,17 @@ const ValueFilter = () => {
             <option value="igual a">igual a</option>
           </select>
         </div>
-        <div className="col-auto">
+        <div className="col-sm-3">
           <input
+            className="form-control"
             data-testid="value-filter"
             type="number"
             onChange={ ({ target }) => setValue(target.value) }
           />
         </div>
-        <div className="col-auto">
+        <div className="col-sm-3">
           <button
-            className="btn btn-dark"
+            className="btn btn-dark col-sm-12"
             type="button"
             data-testid="button-filter"
             onClick={ () => addNumericFilter({ column, comparison, value }) }
