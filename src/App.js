@@ -12,12 +12,14 @@ import Filters from './components/Filters';
 function App() {
   return (
     <Provider>
-      <Header />
-      <NameFilter />
-      <ValueFilter />
-      <OrderForm />
-      <Filters />
-      <Table />
+      <div className="p-3 bg-secondary">
+        <Header />
+        <NameFilter />
+        <ValueFilter />
+        <OrderForm />
+        <Filters />
+        <Table />
+      </div>
     </Provider>
   );
 }
