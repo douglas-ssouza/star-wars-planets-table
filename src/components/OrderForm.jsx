@@ -20,12 +20,11 @@ const OrderForm = () => {
             onChange={ ({ target }) => setColumn(target.value) }
           >
             {
-              Object.keys(data[0]).map((option) => {
-                if (option !== 'residents') {
-                  return <option key={ option } value={ option }>{ option }</option>;
-                }
-                return null;
-              })
+              Object.keys(data[0]).map((option) => (
+                option !== 'residents'
+                  ? <option key={ option } value={ option }>{ option }</option>
+                  : null
+              ))
             }
           </select>
         </div>
