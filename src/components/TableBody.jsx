@@ -34,7 +34,7 @@ const TableBody = () => {
 
     const { order: { column, sort } } = filter;
 
-    if (column === 'name') {
+    if (isNaN(planets[0][column])) {
       const POS = 1;
       const NEG = -1;
       planets.sort((a, b) => {
@@ -43,8 +43,8 @@ const TableBody = () => {
       });
     } else {
       planets.sort((a, b) => {
-        if (sort === 'ASC') return a[column] - b[column];
-        return b[column] - a[column];
+        if (sort === 'ASC') return Number(a[column]) - Number(b[column]);
+        return Number(b[column]) - Number(a[column]);
       });
     }
 
