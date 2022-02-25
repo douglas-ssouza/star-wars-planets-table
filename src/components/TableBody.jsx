@@ -28,7 +28,7 @@ const TableBody = () => {
     ));
   };
 
-  const renderTableBody = () => {
+  const sortPlanets = () => {
     const planetsByName = filterPlanetsByName();
     const planets = filterPlanetsByValues(planetsByName);
 
@@ -48,30 +48,30 @@ const TableBody = () => {
       });
     }
 
-    return (
-      planets.map((planet) => (
-        <tr key={ planet.name }>
-          <td data-testid="planet-name">{ planet.name }</td>
-          <td>{ planet.rotation_period }</td>
-          <td>{ planet.orbital_period }</td>
-          <td>{ planet.diameter }</td>
-          <td>{ planet.climate }</td>
-          <td>{ planet.gravity }</td>
-          <td>{ planet.terrain }</td>
-          <td>{ planet.surface_water }</td>
-          <td>{ planet.population }</td>
-          <td>{ planet.films }</td>
-          <td>{ planet.created }</td>
-          <td>{ planet.edited }</td>
-          <td>{ planet.url }</td>
-        </tr>
-      ))
-    );
-  };
+    return planets;
+  }
 
   return (
     <tbody>
-      { renderTableBody() }
+      { 
+        sortPlanets().map((planet) => (
+          <tr key={ planet.name }>
+            <td data-testid="planet-name">{ planet.name }</td>
+            <td>{ planet.rotation_period }</td>
+            <td>{ planet.orbital_period }</td>
+            <td>{ planet.diameter }</td>
+            <td>{ planet.climate }</td>
+            <td>{ planet.gravity }</td>
+            <td>{ planet.terrain }</td>
+            <td>{ planet.surface_water }</td>
+            <td>{ planet.population }</td>
+            <td>{ planet.films }</td>
+            <td>{ planet.created }</td>
+            <td>{ planet.edited }</td>
+            <td>{ planet.url }</td>
+          </tr>
+        ))
+      }
     </tbody>
   );
 };
