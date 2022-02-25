@@ -34,7 +34,9 @@ const TableBody = () => {
 
     const { order: { column, sort } } = filter;
 
-    if (isNaN(planets[0][column])) {
+    const stringColumns = ['name', 'gravity', 'terrain', 'films', 'created', 'edited', 'url'];
+
+    if (stringColumns.includes(column)) {
       const POS = 1;
       const NEG = -1;
       planets.sort((a, b) => {
