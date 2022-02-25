@@ -14,7 +14,6 @@ const NameFilter = () => {
         placeholder="Filtrar por nome"
         onChange={ ({ target }) => changeNameFilter(target.value) }
       />
-      <div className="form-text">Digite o nome para filtrar</div>
     </div>
   );
 };
