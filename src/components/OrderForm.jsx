@@ -12,10 +12,9 @@ const OrderForm = () => {
 
   return (
     <form>
-      <div className="row g-3 m-3">
-        <div className="col-sm-3">
+      <div>
+        <div>
           <select
-            className="form-select"
             data-testid="column-sort"
             onChange={ ({ target }) => setColumn(target.value) }
           >
@@ -28,10 +27,9 @@ const OrderForm = () => {
             }
           </select>
         </div>
-        <div className="col-sm-3 form-check text-center">
-          <label htmlFor="ASC" className="form-check-label">
+        <div>
+          <label htmlFor="ASC">
             <input
-              className="form-check-input"
               data-testid="column-sort-input-asc"
               type="radio"
               value="ASC"
@@ -43,10 +41,9 @@ const OrderForm = () => {
             Ascendente
           </label>
         </div>
-        <div className="col-sm-3 form-check text-center">
-          <label htmlFor="DESC" className="form-check-label">
+        <div>
+          <label htmlFor="DESC">
             <input
-              className="form-check-input"
               data-testid="column-sort-input-desc"
               type="radio"
               value="DESC"
@@ -57,9 +54,8 @@ const OrderForm = () => {
             Descendente
           </label>
         </div>
-        <div className="col-sm-3">
+        <div>
           <button
-            className="btn btn-dark col-sm-12 ms-2"
             type="button"
             data-testid="column-sort-button"
             onClick={ () => changeOrder({ column, sort }) }

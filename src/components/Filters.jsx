@@ -14,14 +14,11 @@ const Filters = () => {
           <div
             key={ column }
             data-testid="filter"
-            className="border border-3 border-warning mb-3
-            p-2 d-flex justify-content-between align-items-baseline"
           >
             <p>{ column }</p>
             <p>{ comparison }</p>
             <p>{ value }</p>
             <button
-              className="btn btn-danger"
               type="button"
               onClick={ () => removeNumericFilter(column) }
             >

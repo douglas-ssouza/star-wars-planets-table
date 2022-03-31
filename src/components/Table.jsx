@@ -11,11 +11,8 @@ const Table = () => {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <div className="table-responsive-sm">
-      <table
-        className="table table-dark table-striped table-hover
-        table-bordered align-middle m-3 text-center"
-      >
+    <div>
+      <table>
         <TableHead />
         <TableBody />
       </table>
