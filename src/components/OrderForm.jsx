@@ -1,6 +1,12 @@
 import React, { useState, useContext } from 'react';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/material/Icon'
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 import planetsContext from '../context/planetsContext';
 
@@ -15,37 +21,39 @@ const OrderForm = () => {
   return (
     <form>
       <div>
-        <div>
-          <select
+        <FormControl>
+          <FormLabel>Ordem:</FormLabel>
+          <Select
+            color="secondary"
+            size="small"
             data-testid="column-sort"
             onChange={ ({ target }) => setColumn(target.value) }
           >
             {
               Object.keys(data[0]).map((option) => (
                 option !== 'residents'
-                  ? <option key={ option } value={ option }>{ option }</option>
+                  ? <MenuItem key={ option } value={ option }>{ option }</MenuItem>
                   : null
               ))
             }
-          </select>
-        </div>
-        <div>
-          <label htmlFor="ASC">
-            <input
+          </Select>
+          <RadioGroup>
+            <FormControlLabel
+              control={ <Radio /> }
+              label="Ascendente"
               data-testid="column-sort-input-asc"
+              size="small"
               type="radio"
               value="ASC"
-              id="ASC"
               name="sort"
+              id="asc"
               onClick={ ({ target }) => setSort(target.value) }
               defaultChecked
             />
-            Ascendente
-          </label>
-        </div>
-        <div>
-          <label htmlFor="DESC">
-            <input
+            <FormControlLabel
+              control={ <Radio /> }
+              label="Descendente"
+              size="small"
               data-testid="column-sort-input-desc"
               type="radio"
               value="DESC"
@@ -53,9 +61,8 @@ const OrderForm = () => {
               name="sort"
               onClick={ ({ target }) => setSort(target.value) }
             />
-            Descendente
-          </label>
-        </div>
+          </RadioGroup>
+        </FormControl>
         <div>
           <Button
             variant="contained"
