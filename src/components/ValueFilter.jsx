@@ -33,6 +33,7 @@ const ValueFilter = () => {
       <div>
         <div>
           <Select
+            style={ { width: '235px' } }
             size="small"
             className="form-select"
             data-testid="column-filter"
@@ -43,6 +44,7 @@ const ValueFilter = () => {
         </div>
         <div>
           <Select
+            style={ { width: '235px' } }
             width="100px"
             size="small"
             data-testid="comparison-filter"
@@ -55,6 +57,7 @@ const ValueFilter = () => {
         </div>
         <div>
           <TextField
+            placeholder="Valor"
             size="small"
             color="secondary"
             variante="outlined"

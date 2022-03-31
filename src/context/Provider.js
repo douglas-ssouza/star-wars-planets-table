@@ -5,6 +5,7 @@ import planetsContext from './planetsContext';
 
 const Provider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [columns, setColumns] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [filter, setFilter] = useState({
     filterByName: { name: '' },
@@ -18,6 +19,14 @@ const Provider = ({ children }) => {
     const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const { results } = await response.json();
     setData(results);
+    const columns = Object.keys(results[0]).map((key, index) => ({
+      id: index,
+      field: key,
+      headerName: key.replace('_', ' '),
+      width: 105,
+      sortable: false,
+    }));
+    setColumns(columns);
     setLoading(false);
   };
 
@@ -60,6 +69,7 @@ const Provider = ({ children }) => {
 
   const context = {
     data,
+    columns,
     isLoading,
     filter,
     changeNameFilter,
