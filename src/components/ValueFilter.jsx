@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Button from '@mui/material/Button';
 
 import planetsContext from '../context/planetsContext';
 
@@ -55,13 +56,17 @@ const ValueFilter = () => {
           />
         </div>
         <div>
-          <button
+          <Button
+            variant="contained"
+            color="secondary"
+            size="small"
+            disableElevation
             type="button"
             data-testid="button-filter"
             onClick={ () => addNumericFilter({ column, comparison, value }) }
           >
             Filtrar
-          </button>
+          </Button>
         </div>
       </div>
     </form>

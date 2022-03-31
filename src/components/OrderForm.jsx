@@ -1,4 +1,6 @@
 import React, { useState, useContext } from 'react';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/material/Icon'
 
 import planetsContext from '../context/planetsContext';
 
@@ -55,13 +57,17 @@ const OrderForm = () => {
           </label>
         </div>
         <div>
-          <button
+          <Button
+            variant="contained"
+            color="secondary"
+            size="small"
+            disableElevation
             type="button"
             data-testid="column-sort-button"
             onClick={ () => changeOrder({ column, sort }) }
           >
             Ordenar
-          </button>
+          </Button>
         </div>
       </div>
     </form>
