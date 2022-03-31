@@ -1,9 +1,6 @@
 import React, { useContext } from 'react';
 import { DataGrid } from '@mui/x-data-grid'
 
-import TableHead from './TableHead';
-import TableBody from './TableBody';
-
 import planetsContext from '../context/planetsContext';
 
 const Table = () => {
@@ -61,9 +58,6 @@ const Table = () => {
       return { ...planet, id: index };
     });
   }
-
-  console.log(columns);
-  console.log(sortPlanets());
 
   if (isLoading) return <p>Loading...</p>;
 

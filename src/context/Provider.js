@@ -19,13 +19,15 @@ const Provider = ({ children }) => {
     const response = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const { results } = await response.json();
     setData(results);
-    const columns = Object.keys(results[0]).map((key, index) => ({
-      id: index,
-      field: key,
-      headerName: key.replace('_', ' '),
-      width: 105,
-      sortable: false,
-    }));
+    const columns = Object.keys(results[0])
+      .filter((key) => !['edited', 'created', 'films', 'url', 'residents'].includes(key))
+      .map((key, index) => ({
+        id: index,
+        field: key,
+        headerName: key.replace('_', ' '),
+        width: 115,
+        sortable: false,
+      }));
     setColumns(columns);
     setLoading(false);
   };

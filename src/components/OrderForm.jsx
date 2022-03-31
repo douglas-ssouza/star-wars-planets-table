@@ -30,10 +30,12 @@ const OrderForm = () => {
             onChange={ ({ target }) => setColumn(target.value) }
           >
             {
-              Object.keys(data[0]).map((option) => (
-                option !== 'residents'
-                  ? <MenuItem key={ option } value={ option }>{ option }</MenuItem>
-                  : null
+              Object.keys(data[0])
+                .filter((key) => !['edited', 'created', 'films', 'url', 'residents'].includes(key))
+                .map((option) => (
+                  option !== 'residents'
+                    ? <MenuItem key={ option } value={ option }>{ option.replace('_', ' ') }</MenuItem>
+                    : null
               ))
             }
           </Select>
