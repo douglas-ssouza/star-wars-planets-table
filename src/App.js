@@ -11,7 +11,7 @@ import Filters from './components/Filters';
 function App() {
   return (
     <Provider>
-      <div className="p-3 bg-secondary">
+      <div>
         <Header />
         <NameFilter />
         <ValueFilter />
