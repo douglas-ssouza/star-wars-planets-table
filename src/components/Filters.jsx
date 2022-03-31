@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
-import planetsContext from '../context/planetsContext';
+import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab'
 import DeleteIcon from '@mui/icons-material/Delete';
+
+import planetsContext from '../context/planetsContext';
 
 const Filters = () => {
   const {
@@ -10,16 +12,30 @@ const Filters = () => {
   } = useContext(planetsContext);
 
   return (
-    <section className="">
+    <Box
+      sx={ {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        flexWrap: 'wrap',
+      } }
+    >
       {
         filterByNumericValues.map(({ column, comparison, value }) => (
-          <div
+          <Box
             key={ column }
             data-testid="filter"
+            sx={ {
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              width: '25%',
+              border: '1px solid black',
+              borderRadius: '3px',
+              padding: '0.5%',
+              margin: '1% 2%',
+            } }
           >
-            <p>{ column }</p>
-            <p>{ comparison }</p>
-            <p>{ value }</p>
+            <p>{ `${column.replace('_', " ")} - ${comparison} - ${value}` }</p>
             <Fab
               color="error"
               size="small"
@@ -27,10 +43,10 @@ const Filters = () => {
             >
               <DeleteIcon />
             </Fab>
-          </div>
+          </Box>
         ))
       }
-    </section>
+    </Box>
   );
 };
 

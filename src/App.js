@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 
 import Provider from './context/Provider';
 import Header from './components/Header';
@@ -11,14 +12,43 @@ import Filters from './components/Filters';
 function App() {
   return (
     <Provider>
-      <div>
-        <Header />
-        <NameFilter />
-        <ValueFilter />
-        <OrderForm />
-        <Filters />
+      <Box>
+        <Box
+          sx={ {
+            height: '35vh',
+            width: '100%',
+          } }
+        >
+          <Header />
+        </Box>
+        <Box
+          sx={ {
+            display: 'flex',
+            alignItems: 'stretch',
+            justifyContent: 'space-between',
+          } }
+        >
+          <Box
+            sx={ {
+              width: '50%',
+            } }
+          >
+            <NameFilter />
+            <ValueFilter />
+          </Box>
+          <Box
+            sx={ {
+              width: '50%',
+            } }
+          >
+            <OrderForm />
+          </Box>
+        </Box>
+        <Box>
+          <Filters />
+        </Box>
         <Table />
-      </div>
+      </Box>
     </Provider>
   );
 }
