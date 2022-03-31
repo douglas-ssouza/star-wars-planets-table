@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+import ReactDom from 'react-dom';
 import planetsContext from '../context/planetsContext';
+import Button from '@mui/material/Button';
 
 const Filters = () => {
   const {
@@ -18,12 +20,12 @@ const Filters = () => {
             <p>{ column }</p>
             <p>{ comparison }</p>
             <p>{ value }</p>
-            <button
+            <Button
               type="button"
               onClick={ () => removeNumericFilter(column) }
             >
               X
-            </button>
+            </Button>
           </div>
         ))
       }
