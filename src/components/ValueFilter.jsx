@@ -1,4 +1,7 @@
 import React, { useState, useContext } from 'react';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 import planetsContext from '../context/planetsContext';
@@ -18,7 +21,7 @@ const ValueFilter = () => {
     return options.map(
       (option) => {
         if (!usedOptions.includes(option)) {
-          return <option key={ option } value={ option }>{option}</option>;
+          return <MenuItem key={ option } value={ option }>{option}</MenuItem>;
         }
         return null;
       },
@@ -29,26 +32,32 @@ const ValueFilter = () => {
     <form>
       <div>
         <div>
-          <select
+          <Select
+            size="small"
             className="form-select"
             data-testid="column-filter"
             onChange={ ({ target }) => setColumn(target.value) }
           >
             { renderOptions() }
-          </select>
+          </Select>
         </div>
         <div>
-          <select
+          <Select
+            width="100px"
+            size="small"
             data-testid="comparison-filter"
             onChange={ ({ target }) => setComparison(target.value) }
           >
-            <option value="maior que">maior que</option>
-            <option value="menor que">menor que</option>
-            <option value="igual a">igual a</option>
-          </select>
+            <MenuItem value="maior que">maior que</MenuItem>
+            <MenuItem value="menor que">menor que</MenuItem>
+            <MenuItem value="igual a">igual a</MenuItem>
+          </Select>
         </div>
         <div>
-          <input
+          <TextField
+            size="small"
+            color="secondary"
+            variante="outlined"
             className="form-control"
             data-testid="value-filter"
             type="number"

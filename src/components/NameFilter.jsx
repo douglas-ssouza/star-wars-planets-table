@@ -11,6 +11,7 @@ const NameFilter = () => {
       <TextField
         size="small"
         variant="outlined"
+        color="secondary"
         data-testid="name-filter"
         type="text"
         placeholder="Filtrar por nome"
