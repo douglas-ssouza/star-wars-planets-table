@@ -12,7 +12,12 @@ import Filters from './components/Filters';
 function App() {
   return (
     <Provider>
-      <Box>
+      <Box
+        sx={ {
+          backgroundColor: '#352F44',
+          padding: '2%'
+        } }
+      >
         <Box
           sx={ {
             height: '35vh',
