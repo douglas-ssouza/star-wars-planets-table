@@ -24,8 +24,8 @@ function App() {
         <Box
           sx={ {
             display: 'flex',
-            alignItems: 'stretch',
-            justifyContent: 'space-between',
+            alignItems: 'center',
+            justifyContent: 'center',
           } }
         >
           <Box

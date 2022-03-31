@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Box from '@mui/material/Box';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
@@ -20,7 +21,13 @@ const OrderForm = () => {
 
   return (
     <form>
-      <div>
+      <Box
+        sx={ {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        } }
+      >
         <FormControl>
           <FormLabel>Ordem:</FormLabel>
           <Select
@@ -65,11 +72,13 @@ const OrderForm = () => {
             />
           </RadioGroup>
         </FormControl>
-        <div>
+        <Box
+          sx={ { margin: '1%' } }
+        >
           <Button
             variant="contained"
             color="secondary"
-            size="small"
+            size="large"
             disableElevation
             type="button"
             data-testid="column-sort-button"
@@ -77,8 +86,8 @@ const OrderForm = () => {
           >
             Ordenar
           </Button>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </form>
   );
 };

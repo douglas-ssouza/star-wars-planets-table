@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Box from '@mui/material/Box';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
@@ -21,7 +22,7 @@ const ValueFilter = () => {
     return options.map(
       (option) => {
         if (!usedOptions.includes(option)) {
-          return <MenuItem key={ option } value={ option }>{option}</MenuItem>;
+          return <MenuItem key={ option } value={ option }>{option.replace('_', ' ')}</MenuItem>;
         }
         return null;
       },
@@ -30,8 +31,14 @@ const ValueFilter = () => {
 
   return (
     <form>
-      <div>
-        <div>
+      <Box
+        sx={ {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        } }
+      >
+        <Box sx={ { margin: '1%' } }>
           <Select
             style={ { width: '235px' } }
             size="small"
@@ -41,8 +48,8 @@ const ValueFilter = () => {
           >
             { renderOptions() }
           </Select>
-        </div>
-        <div>
+        </Box>
+        <Box sx={ { margin: '1%' } }>
           <Select
             style={ { width: '235px' } }
             width="100px"
@@ -54,8 +61,8 @@ const ValueFilter = () => {
             <MenuItem value="menor que">menor que</MenuItem>
             <MenuItem value="igual a">igual a</MenuItem>
           </Select>
-        </div>
-        <div>
+        </Box>
+        <Box sx={ { margin: '1%' } }>
           <TextField
             placeholder="Valor"
             size="small"
@@ -66,12 +73,12 @@ const ValueFilter = () => {
             type="number"
             onChange={ ({ target }) => setValue(target.value) }
           />
-        </div>
-        <div>
+        </Box>
+        <Box sx={ { margin: '1%' } }>
           <Button
             variant="contained"
             color="secondary"
-            size="small"
+            size="large"
             disableElevation
             type="button"
             data-testid="button-filter"
@@ -79,8 +86,8 @@ const ValueFilter = () => {
           >
             Filtrar
           </Button>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </form>
   );
 };
