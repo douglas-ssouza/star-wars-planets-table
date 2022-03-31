@@ -13,6 +13,7 @@ A página permite também que os planetas sejam filtrados de diversas formas.
 * JavaScript
 * React
 * Context API
+* Material UI
 
 ## Habilidades desenvolvidas
 
@@ -25,4 +26,4 @@ A página permite também que os planetas sejam filtrados de diversas formas.
 Para executar a aplicação siga os seguintes passos:
 1. Clone o repositório em sua máquina
 2. No terminal, instale as dependência da aplicação: `npm install`
-3. Agora é só rodar a aplicação para rodar: `npm start`
+3. Agora é só colocar a aplicação para rodar: `npm start`
