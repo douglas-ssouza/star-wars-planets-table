@@ -1,17 +1,24 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 
 import starWarsLogo from '../images/star-wars-logo.png';
 
 const Header = () => (
   <header>
-    <div>
+    <Box
+      sx={ {
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      } }
+    >
       <img
         width="200px"
         src={ starWarsLogo }
         alt="Star Wars Logo"
       />
       <h1>Star Wars Planets Search</h1>
-    </div>
+    </Box>
   </header>
 );
 
