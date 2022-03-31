@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import TextField from '@mui/material/TextField';
 
 import planetsContext from '../context/planetsContext';
 
@@ -7,7 +8,9 @@ const NameFilter = () => {
 
   return (
     <div>
-      <input
+      <TextField
+        size="small"
+        variant="outlined"
         data-testid="name-filter"
         type="text"
         placeholder="Filtrar por nome"
