@@ -33,7 +33,6 @@ function App() {
               width: '50%',
             } }
           >
-            <NameFilter />
             <ValueFilter />
           </Box>
           <Box
@@ -46,6 +45,13 @@ function App() {
         </Box>
         <Box>
           <Filters />
+        </Box>
+        <Box sx={ {
+          display: 'flex',
+          justifyContent: 'center',
+          margin: '2% 2%'
+        } }>
+          <NameFilter />
         </Box>
         <Table />
       </Box>
