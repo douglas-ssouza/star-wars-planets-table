@@ -25,6 +25,7 @@ const Provider = ({ children }) => {
         id: index,
         field: key,
         headerName: key.replace('_', ' '),
+        headerAlign: 'center',
         width: 125,
         sortable: false,
       }));

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { DataGrid } from '@mui/x-data-grid'
+import { useDemoData } from "@mui/x-data-grid-generator";
+import { makeStyles } from "@mui/styles";
 
 import planetsContext from '../context/planetsContext';
 
@@ -62,12 +64,14 @@ const Table = () => {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <div style={ { height: '400px', width: '100%' } }>
+    <div style={ { height: '320px', width: '100%' } } className="none">
       <DataGrid
         columns={ columns }
         rows={ sortPlanets() }
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={ 5 }
+        rowsPerPageOptions={ [5] }
+        rowHeight={ 40 }
+        headerHeight={ 60 }
       />
     </div>
   );

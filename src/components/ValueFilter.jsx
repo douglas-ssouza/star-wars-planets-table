@@ -40,6 +40,7 @@ const ValueFilter = () => {
       >
         <Box sx={ { margin: '1%' } }>
           <Select
+            color="secondary"
             style={ { width: '235px' } }
             size="small"
             className="form-select"
@@ -51,6 +52,7 @@ const ValueFilter = () => {
         </Box>
         <Box sx={ { margin: '1%' } }>
           <Select
+            color="secondary"
             style={ { width: '235px' } }
             width="100px"
             size="small"

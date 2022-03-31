@@ -10,6 +10,8 @@ const Header = () => (
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
+        margin: 0,
+        padding: 0,
       } }
     >
       <img

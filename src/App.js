@@ -14,13 +14,13 @@ function App() {
     <Provider>
       <Box
         sx={ {
-          backgroundColor: '#352F44',
-          padding: '2%'
+          backgroundColor: '#DBD8E3',
+          padding: '1%'
         } }
       >
         <Box
           sx={ {
-            height: '35vh',
+            height: '25vh',
             width: '100%',
           } }
         >
